@@ -479,6 +479,33 @@ impl Transaction {
         // In a real implementation, this would create proper signature info
         Envelope::new_from_data_and_sig(data, EmptySignInfo {})
     }
+
+    /// Create a new transaction from TransactionData and signatures (convenience method)
+    pub fn from_transaction_data(
+        transaction_data: TransactionData,
+        _signatures: Vec<SuiSignature>,
+    ) -> Self {
+        // Create the intent message
+        let intent = Intent::sui_app(IntentScope::TransactionData);
+        let intent_message = IntentMessage::new(intent, transaction_data);
+        
+        // Create the sender signed transaction
+        let sender_signed_tx = SenderSignedTransaction::new(intent_message);
+        
+        // Create the sender signed data
+        let sender_signed_data = SenderSignedData::new(vec![sender_signed_tx]);
+        
+        // Use the main from_data method
+        Self::from_data(sender_signed_data, _signatures)
+    }
+
+    /// Create a new transaction from TransactionData and signatures (alias for convenience)
+    pub fn from_data_tx(
+        transaction_data: TransactionData,
+        signatures: Vec<SuiSignature>,
+    ) -> Self {
+        Self::from_transaction_data(transaction_data, signatures)
+    }
 }
 
 impl fmt::Display for TransactionData {
