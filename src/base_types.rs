@@ -50,6 +50,34 @@ impl From<SuiAddress> for [u8; 32] {
     }
 }
 
+impl From<&crate::crypto::PublicKey> for SuiAddress {
+    fn from(public_key: &crate::crypto::PublicKey) -> Self {
+        match public_key {
+            crate::crypto::PublicKey::Ed25519(bytes) => {
+                // Take first 32 bytes for address
+                let mut address = [0u8; 32];
+                let len = std::cmp::min(bytes.len(), 32);
+                address[..len].copy_from_slice(&bytes[..len]);
+                SuiAddress(address)
+            }
+            crate::crypto::PublicKey::Secp256k1(bytes) => {
+                // Take first 32 bytes for address
+                let mut address = [0u8; 32];
+                let len = std::cmp::min(bytes.len(), 32);
+                address[..len].copy_from_slice(&bytes[..len]);
+                SuiAddress(address)
+            }
+            crate::crypto::PublicKey::Secp256r1(bytes) => {
+                // Take first 32 bytes for address
+                let mut address = [0u8; 32];
+                let len = std::cmp::min(bytes.len(), 32);
+                address[..len].copy_from_slice(&bytes[..len]);
+                SuiAddress(address)
+            }
+        }
+    }
+}
+
 impl AsRef<[u8]> for SuiAddress {
     fn as_ref(&self) -> &[u8] {
         self.0.as_ref()

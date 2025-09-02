@@ -92,7 +92,7 @@ impl PublicKey {
 }
 
 /// Signature schemes
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub enum SignatureScheme {
     ED25519,
     Secp256k1,
@@ -121,10 +121,14 @@ impl SignatureScheme {
 /// Signature trait
 pub trait Signature: Clone + Send + Sync {
     fn verify(&self, msg: &[u8], pk: &PublicKey) -> bool;
+    fn new_secure<T>(msg: &T, _keypair: &SuiKeyPair) -> Self 
+    where 
+        T: serde::Serialize,
+        Self: Sized;
 }
 
 /// Basic signature implementation
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct BasicSignature {
     pub scheme: SignatureScheme,
     pub signature_bytes: Vec<u8>,
@@ -135,4 +139,18 @@ impl Signature for BasicSignature {
         // Simplified verification for minimal implementation
         true
     }
+
+    fn new_secure<T>(_msg: &T, _keypair: &SuiKeyPair) -> Self 
+    where 
+        T: serde::Serialize,
+        Self: Sized,
+    {
+        Self {
+            scheme: SignatureScheme::ED25519,
+            signature_bytes: vec![0u8; 64], // Placeholder signature
+        }
+    }
 }
+
+// Re-export BasicSignature as SuiSignature for convenience
+pub type SuiSignature = BasicSignature;
