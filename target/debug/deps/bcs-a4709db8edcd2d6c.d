@@ -1,0 +1,11 @@
+/Users/surajangurajnaidu/project/minimal-sui-types/target/debug/deps/bcs-a4709db8edcd2d6c.d: /Users/surajangurajnaidu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bcs-0.1.6/src/lib.rs /Users/surajangurajnaidu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bcs-0.1.6/src/de.rs /Users/surajangurajnaidu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bcs-0.1.6/src/error.rs /Users/surajangurajnaidu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bcs-0.1.6/src/ser.rs /Users/surajangurajnaidu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bcs-0.1.6/src/test_helpers.rs
+
+/Users/surajangurajnaidu/project/minimal-sui-types/target/debug/deps/libbcs-a4709db8edcd2d6c.rlib: /Users/surajangurajnaidu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bcs-0.1.6/src/lib.rs /Users/surajangurajnaidu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bcs-0.1.6/src/de.rs /Users/surajangurajnaidu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bcs-0.1.6/src/error.rs /Users/surajangurajnaidu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bcs-0.1.6/src/ser.rs /Users/surajangurajnaidu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bcs-0.1.6/src/test_helpers.rs
+
+/Users/surajangurajnaidu/project/minimal-sui-types/target/debug/deps/libbcs-a4709db8edcd2d6c.rmeta: /Users/surajangurajnaidu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bcs-0.1.6/src/lib.rs /Users/surajangurajnaidu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bcs-0.1.6/src/de.rs /Users/surajangurajnaidu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bcs-0.1.6/src/error.rs /Users/surajangurajnaidu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bcs-0.1.6/src/ser.rs /Users/surajangurajnaidu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bcs-0.1.6/src/test_helpers.rs
+
+/Users/surajangurajnaidu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bcs-0.1.6/src/lib.rs:
+/Users/surajangurajnaidu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bcs-0.1.6/src/de.rs:
+/Users/surajangurajnaidu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bcs-0.1.6/src/error.rs:
+/Users/surajangurajnaidu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bcs-0.1.6/src/ser.rs:
+/Users/surajangurajnaidu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bcs-0.1.6/src/test_helpers.rs:
